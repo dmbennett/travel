@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  resources :destinations
 
-  get 'welcome/about'
+  root 'welcome#index'
+  get 'about' => 'welcome#about'
+  get 'contact' => 'welcome#contact'
+  get 'french_destinations' => 'destinations#french'
+  get 'your_destinations' => 'destinations#your_destinations'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

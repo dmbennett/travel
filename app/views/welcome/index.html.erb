@@ -1,2 +1,51 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<style>
+  .size_and_position {
+      max-width: 45%;
+      height: auto;
+      margin: 1%;
+  }
+
+  .center {
+      text-align: center;
+  }
+
+  body {
+      background-color: <%=@color%>;
+      margin: <%=@set_margin%>;
+  }
+  .boxit {
+      width: 32%;
+      padding: 0;
+      border: 2px;
+      border-style: solid;
+      margin: 0.5%;
+
+  }
+</style>
+<body>
+    <h1> To travel or not to travel--that is the question</h1>
+    <h2 class="center"><%= @welcome_message %></h2>
+    <h3>"Out beyond ideas of right and wrong, there is a field, I'll meet you there. --Rumi"</h3>
+<ul>
+    <li><%= link_to 'About' %></li>
+  <li><%= link_to 'Contact', '/contact'%></li>
+</ul>
+    <ul>
+    <% @countries.each do |country| %>
+      <li><%=country%></li>
+    <%end%>
+    </ul>
+
+    <h1> My family!</h1>
+    <% @family_tree.each do |name, relationship|%>
+        <li><%= "#{name} - #{relationship}"%> </li>
+    <%end%>
+
+    <p>Your favorite color: <%= @color %></p>
+
+
+    <% @my_images.shuffle.shuffle.each do |image_name| %>
+        <%= image_tag image_name, class:"size_and_position" %>
+    <% end %>
+</body>
+

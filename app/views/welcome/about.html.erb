@@ -1,2 +1,11 @@
-<h1>Welcome#about</h1>
-<p>Find me in app/views/welcome/about.html.erb</p>
+<body>
+<h1> To travel or not to travel--that is the question</h1>
+<h2>"Out beyond ideas of right and wrong, there is a field, I'll meet you there"</h2>
+<%= link_to 'index', '/?welcome_message=You just came from my about page, didn\'t you?' %>
+<p>My favorite color is <%= @color %></p>
+<p>My shoe size is <%= @shoe_size %></p>
+<% if @shoe_size.to_i > 12 %>
+    <%="I have huge feet"%>
+<%end%>
+</body>
+
